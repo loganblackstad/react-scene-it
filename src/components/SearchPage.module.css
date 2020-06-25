@@ -1,13 +1,19 @@
-.searchform {
+.searchPage {
   margin: 0 auto;
   width: 500px;
   max-width: 90%;
 }
 
+.titleSceneIt {
+  font-size: 46pt;
+  color: #DD4247;
+}
+
 .formGroup {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin: 20px 0;
+  align-items: center;
 }
 
 .formGroup label {

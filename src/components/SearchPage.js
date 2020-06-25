@@ -1,9 +1,11 @@
 
 import React, { Component } from 'react'
-import MovieCard from './MovieCard';
-import styles from './SearchForm.module.css';
+// import MovieCard from './MovieCard';
+import styles from './SearchPage.module.css';
+import Button from 'react-bootstrap/Button';
 
-export default class SearchForm extends Component {
+
+export default class SearchPage extends Component {
   constructor(props) {
     super(props)
 
@@ -33,10 +35,18 @@ export default class SearchForm extends Component {
     }
 
     return (
-      <div className={styles.MovieList} >
-        <h1 className="title-scene-it">Scene-It</h1>
-        {/* <p>Review:  {details.review}</p>
-        <p>Likes:  {details.likes} <button onClick={() => this.increaseLikes(props.id) > <span role="img" aria-label="Likes: ">👍</span></button></p> */}
+      <div className={styles.SearchPage} >
+        <h1 className={styles.titleSceneIt}>Scene-It</h1>
+        <p>Search for movies you want to watch.</p>
+        <p>Save them to your Watch List</p>
+        <p>Go to My WatchList</p>
+        <form onSubmit={this.handleFormSubmit}>
+          <div className={styles.formGroup}>
+            <label htmlFor='title'></label>
+            <input type='text' id='title' name='title' placeholder="Search for a movie..." value={this.state.title} onChange={this.handleChange} />
+            <Button variant="primary" type="submit">Search</Button>
+          </div>
+        </form>
       </div>
     )
   }

@@ -34,7 +34,7 @@ export default class MovieCard extends Component {
       <div className={styles.MovieCard} >
         <h1>{details.name}</h1>
         <p>Review:  {details.review}</p>
-        <p>Likes:  {details.likes} <button onClick={() => this.increaseLikes(props.id) > <span role="img" aria-label="Likes: ">👍</span></button></p>
+        {/* <p>Likes:  {details.likes} <button onClick={() => this.increaseLikes(props.id) > <span role="img" aria-label="Likes: ">👍</span></button></p> */}
       </div>
     )
   }
