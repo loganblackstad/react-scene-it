@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 // import MovieCard from './MovieCard';
 import styles from './SearchPage.module.css';
-import Button from 'react-bootstrap/Button';
+import { Form, Button, Row, Col, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 
 
 export default class SearchPage extends Component {
@@ -47,7 +47,28 @@ export default class SearchPage extends Component {
             <Button variant="primary" type="submit">Search</Button>
           </div>
         </form>
-      </div>
+        <Form>
+
+          <Form.Group controlId="formBasicSearch" onSubmit={this.handleFormSubmit}>
+            <Row className="justify-content-sm-center">
+              <Col sm="4" className="p-0">
+                <Form.Control type="text" placeholder="Search for a movie ..." value={this.state.title} onChange={this.handleChange} />
+              </Col>
+              <Col sm="auto" className="p-0">
+                <Button variant="primary" type="submit">Search</Button>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <Form.Text className="text-muted">
+                  Your movie search will not be judged ... or maybe it will?
+                </Form.Text>
+              </Col>
+            </Row>
+          </Form.Group>
+        </Form>
+
+      </div >
     )
   }
 }
