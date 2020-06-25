@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import MovieCard from './components/MovieCard';
+// import MovieCard from './components/MovieCard';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import MovieList from './components/MovieList';
 
@@ -10,7 +10,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route path="/" exact component={MovieList} />
-          <Route path="/movies/:id" component={MovieCard} />
+          {/* <Route path="/movies/:id" component={MovieCard} /> */}
         </Switch>
       </div>
     </BrowserRouter>

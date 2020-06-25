@@ -7,7 +7,7 @@ export default class MovieList extends Component {
 
     this.state = {
       details: {},
-      loading: true,
+      loading: false,
     }
   }
 
@@ -32,9 +32,7 @@ export default class MovieList extends Component {
 
     return (
       <div className={styles.MovieList} >
-        <h1>{details.name}</h1>
-        <p>Review:  {details.review}</p>
-        <p>Likes:  {details.likes} <button onClick={() => this.increaseLikes(props.id) > <span role="img" aria-label="Likes: ">👍</span></button></p>
+        <h1 className="title-scene-it">Scene-It</h1>
       </div>
     )
   }
