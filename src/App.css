@@ -38,3 +38,13 @@
     transform: rotate(360deg);
   }
 }
+
+.titleSceneIt {
+  font-size: 46pt;
+  color: #DD4247;
+}
+
+.renderedMovies {
+  max-width: 1200px;
+  margin: 0 auto;
+}

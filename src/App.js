@@ -62,14 +62,17 @@ export default class App extends Component {
         <div className="App">
           <Switch>
             <Route exact path='/watchlist'>
+              <h1 className="titleSceneIt">Scene-It</h1>
               <Link to="/">E.T. Go Home</Link>
               <WatchList watchList={this.state.watchList} removeFromWatchList={this.removeFromWatchList} />
             </Route>
 
             <Route path='/' exact >
-              <Link to="/watchlist">Go to my Watch List</Link>
+              <h1 className="titleSceneIt">Scene-It</h1>
+              <p>Search for movies you want to watch.</p>
+              <p>Save them to your <Link to="/watchlist">WatchList</Link></p>
               <SearchPage handleChange={this.handleChange} handleSubmit={this.handleSubmit} name={this.state.name} movies={this.state.movies} />
-              <div>{this.state.movies.map(movie => { return <MovieCard movie={movie} addToWatchList={this.addToWatchList} /> })}</div>
+              <div className="renderedMovies">{this.state.movies.map(movie => { return <MovieCard movie={movie} addToWatchList={this.addToWatchList} /> })}</div>
             </Route>
 
             {/* <Route path='/movies/:id' component={MovieList} /> */}

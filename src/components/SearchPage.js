@@ -11,13 +11,10 @@ export default class SearchPage extends Component {
 
     return (
       <div className={styles.SearchPage} >
-        <h1 className={styles.titleSceneIt}>Scene-It</h1>
-        <p>Search for movies you want to watch.</p>
-        <p>Save them to your Watch List</p>
-        <p>Go to My WatchList</p>
+        {/* 
         <p>Name: {this.props.name}</p>
-        <p>Movie List: {this.props.movies.map(movie => { return movie + ", " })}</p>
-
+        <p>Movie List: {this.props.movies.map(movie => { return movie + ", " })}</p> 
+        */}
 
         {/* REACT BOOTSTRAP FORM for movie search*/}
         <Form>

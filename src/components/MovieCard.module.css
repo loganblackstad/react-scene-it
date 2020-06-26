@@ -1,5 +1,31 @@
 .MovieCard {
- margin: 20px;
- border: 1px solid black;
- border-radius: 3px;
+ margin: 10px;
+ max-width: 300px;
+ display: inline-block;
+ /* border: 1px solid black;
+ border-radius: 3px; */
+}
+
+img {
+  max-width: 250px;
+  width: 250px;
+  height: 375px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 3px 3px #888888;
+}
+
+.movieTitle {
+  /* text-align: start; */
+  text-align: left;
+  max-width: 250px;
+  word-wrap: normal;
+  font-weight: bold;
+  max-height: 48px;
+  min-height: 48px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
