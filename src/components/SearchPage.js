@@ -6,33 +6,8 @@ import { Form, Button, Row, Col, FormGroup, FormControl, ControlLabel } from 're
 
 
 export default class SearchPage extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      movieName: '',
-      movies: []
-    }
-  }
-
-  componentDidMount() {
-    const { id } = this.props.match.params;
-    fetch(`/api/v1/movies/${id}`)
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          details: data,
-          loading: false,
-        })
-      })
-  }
 
   render() {
-    const { loading, details } = this.state;
-
-    if (loading) {
-      return <div>Loading...</div>
-    }
 
     return (
       <div className={styles.SearchPage} >
@@ -40,22 +15,19 @@ export default class SearchPage extends Component {
         <p>Search for movies you want to watch.</p>
         <p>Save them to your Watch List</p>
         <p>Go to My WatchList</p>
-        <form onSubmit={this.handleFormSubmit}>
-          <div className={styles.formGroup}>
-            <label htmlFor='title'></label>
-            <input type='text' id='title' name='title' placeholder="Search for a movie..." value={this.state.title} onChange={this.handleChange} />
-            <Button variant="primary" type="submit">Search</Button>
-          </div>
-        </form>
-        <Form>
+        <p>Name: {this.props.name}</p>
+        <p>Movie List: {this.props.movies.map(movie => { return movie + ", " })}</p>
 
-          <Form.Group controlId="formBasicSearch" onSubmit={this.handleFormSubmit}>
+
+        {/* REACT BOOTSTRAP FORM for movie search*/}
+        <Form>
+          <Form.Group controlId="formBasicSearch" >
             <Row className="justify-content-sm-center">
               <Col sm="4" className="p-0">
-                <Form.Control type="text" placeholder="Search for a movie ..." value={this.state.title} onChange={this.handleChange} />
+                <Form.Control type="text" placeholder="Search for a movie ..." value={this.props.name} onChange={this.props.handleChange} />
               </Col>
               <Col sm="auto" className="p-0">
-                <Button variant="primary" type="submit">Search</Button>
+                <Button variant="primary" onClick={this.props.handleSubmit}>Search</Button>
               </Col>
             </Row>
             <Row>

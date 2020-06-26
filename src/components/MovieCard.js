@@ -2,39 +2,17 @@ import React, { Component } from 'react'
 import styles from './MovieCard.module.css';
 
 export default class MovieCard extends Component {
-  constructor(props) {
-    super(props)
 
-    this.state = {
-      details: {},
-      loading: true,
-    }
-  }
-
-  componentDidMount() {
-    const { id } = this.props.match.params;
-    fetch(`/api/v1/movies/${id}`)
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          details: data,
-          loading: false,
-        })
-      })
-  }
 
   render() {
-    const { loading, details } = this.state;
-
-    if (loading) {
-      return <div>Loading...</div>
-    }
-
     return (
       <div className={styles.MovieCard} >
-        <h1>{details.name}</h1>
-        <p>Review:  {details.review}</p>
-        {/* <p>Likes:  {details.likes} <button onClick={() => this.increaseLikes(props.id) > <span role="img" aria-label="Likes: ">👍</span></button></p> */}
+        <img src={this.props.movie.Poster} alt={this.props.movie.Title} />
+        <h1>{this.props.movie.Title}</h1>
+        <p>{this.props.movie.Year}</p>
+        {this.props.removeFromWatchList ? <button onClick={() => this.props.removeFromWatchList(this.props.movie)}>Remove from WatchList</button> :
+          <button onClick={() => this.props.addToWatchList(this.props.movie)}>Add to WatchList</button>
+        }
       </div>
     )
   }
